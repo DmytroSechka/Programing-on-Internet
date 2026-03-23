@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratorna 3 Forma</title>
+    <style>
+      input {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="radio"],
+      [type="checkbox"] {
+        display: inline;
+      }
+
+      label[id="nameOfSectionForGender"],
+      label[id="nameOfSectionForLanguage"] {
+        display: block;
+      }
+
+      label[id="countrySelector"] {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      select[id="subjectSelector"] {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Student card FORM</h1>
+    </header>
+    <form action="/lab3/index.html" method="POST" enctype="multipart/form-data">
+      <section>
+        <header>
+          <h2>Personal information</h2>
+        </header>
+        <fieldset>
+          <legend>Provide your details</legend>
+
+          <label for="fullName">Full Name (3-16 characters): </label>
+          <input
+            type="text"
+            id="fullNameId"
+            name="fullName"
+            placeholder="Enter your name"
+            required
+            pattern="\w{3,16}"
+          />
+
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            id="emailiId"
+            name="email"
+            placeholder="Enter your email "
+            required
+          />
+
+          <label for="pass">Password (min 8 numbers): </label>
+          <input
+            type="password"
+            id="passid"
+            name="pass"
+            placeholder="Enter a password"
+            pattern="\d.{8,}"
+            required
+            title="Тільки цифри, мінімум 8 цифр."
+          />
+
+          <label for="age">Age: </label>
+          <input type="number" id="ageId" name="age" />
+
+          <label for="dateOfBirth">Date of Birt:</label>
+          <input type="date" id="dateOfBirthId" name="dateOfBirth" />
+
+          <label id="nameOfSectionForGender">Gender:</label>
+
+          <label for="gender">Male</label>
+          <input
+            type="radio"
+            id="genderMaleId"
+            name="gender"
+            value="genderMale"
+          />
+
+          <label for="genderFemele">Famele</label>
+          <input
+            type="radio"
+            id="genderFemeleId"
+            name="gender"
+            value="genderFemele"
+          />
+
+          <label for="otherId">Other</label>
+          <input type="radio" id="otherId" name="gender" value="other" />
+
+          <label id="nameOfSectionForLanguage">Language:</label>
+
+          <label for="EnglishId">English</label>
+          <input
+            type="checkbox"
+            id="EnglishId"
+            name="Language"
+            value="English"
+          />
+
+          <label for="SpanishId">Spanish</label>
+          <input
+            type="checkbox"
+            id="SpanishId"
+            name="Language"
+            value="Spanish"
+          />
+
+          <label for="FrenchId">French</label>
+          <input type="checkbox" id="FrenchId" name="Language" value="French" />
+
+          <label id="countrySelector">
+            Country:
+            <select name="Select Country">
+              <option disabled selected>Select your country</option>
+              <option>Ukraine</option>
+              <option>Poland</option>
+              <option>America</option>
+              <option>French</option>
+            </select>
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <h1>College Subjects</h1>
+
+        <fieldset>
+          <legend>Select your subjects</legend>
+          <select multiple name="Subjects" id="subjectSelector" required>
+            <option>Mathematics</option>
+            <option>Computer Science</option>
+            <option>Physics</option>
+            <option>Chemistry</option>
+            <option>Programming</option>
+          </select>
+
+          <label>
+            Rate your interest in Computer Science:
+            <input
+              type="range"
+              min="0"
+              max="10"
+              step="1"
+              name="range"
+              id="rangeid"
+            />
+          </label>
+        </fieldset>
+      </section>
+
+      <section>
+        <h1>Skills Assessment</h1>
+        <fieldset>
+          <legend>Assess your skills</legend>
+
+          <label>
+            Decribe your skills:
+            <textarea
+              placeholder="Lest your skills here..."
+              rows="5"
+              cols="60"
+              name="textarea"
+            ></textarea>
+          </label>
+
+          <label
+            >Upload your resume:
+            <input type="file" name="fileChooser"/>
+          </label>
+
+          <label>
+            Pick your favorite color:
+            <input type="color" name="PickColor" />
+          </label>
+
+          <label>
+            Preferred study time: <input type="time" name="StudyTime" />
+          </label>
+
+          <label>
+            <input type="submit" value="Submit Survey" />
+          </label>
+        </fieldset>
+      </section>
+    </form>
+
+    <footer>
+      <h5>Student card by Volodia. All rights reserved</h5>
+    </footer>
+  </body>
+</html>
